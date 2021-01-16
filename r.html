@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirect</title>
+    <link rel="stylesheet" href="https://rhub.netlify.app/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://rhub.netlify.app/load.css" />
+  </head>
+  <body>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <h1 id="rhid">Error</h1>
+
+    <script>
+        const queryString = new URLSearchParams(window.location.search);
+    	const rhid = queryString.get('rhid');
+        if( rhid ) {
+        	document.getElementById('rhid').innerHTML = `<h1>Redirecting to RoutineHub Shortcut ${rhid}...</h1>`;
+          window.location.replace(`https://routinehub.co/shortcut/${rhid}`); }
+        else {
+        	document.getElementById('rhid').innerHTML = `Nothing to redirect to! You will return to the homepage`
+          window.location.replace(`/index`); }
+    </script>
+  </body>
+</html>

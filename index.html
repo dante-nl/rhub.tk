@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>rhub.tk - Short Shortcuts</title>
+    <style>
+      @media (prefers-color-scheme: dark) {
+    	body {
+			background: #141414;
+        	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        	color: white;
+            }
+
+            .button {
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                padding: 12px 24px;
+                border: 3px solid #346f66;
+                border-radius: 8px;
+                background: #346f66;
+                color: #EBEBEB;
+                text-decoration: none;
+            }
+            .button:hover,
+            .button:focus {
+                border: 3px solid #3e857a;
+                background: #3e857a;
+                color: #EBEBEB;
+                text-decoration: none;
+            }
+
+
+            input {
+              color: white;
+              border: 3px solid #346f66;
+              padding: 12px 24px;
+              border-radius: 8px;
+              background: none;
+            }
+
+            input:focus {
+              color: white;
+              background: #346F66;
+              border: 3px solid #346f66
+                padding: 12px 24px;
+                  border-radius: 8px;
+            }
+
+
+
+        a {
+  			color: #346F66;
+		}
+
+    }
+
+    @media (prefers-color-scheme: light) {
+    	body {
+				background: #EBEBEB;
+        		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        		color: black
+      		}
+
+          .button {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        padding: 12px 24px;
+        border: 3px solid #4ea699;
+        border-radius: 8px;
+        background: #4ea699;
+        color: #EBEBEB;
+        text-decoration: none;
+    }
+    .button:hover,
+    .button:focus {
+        border: 3px solid #5ec7b8;
+        background: #5ec7b8;
+        color: #EBEBEB;
+        text-decoration: none;
+    }
+
+
+        a {
+  			color: #4EA699;
+		}
+
+
+        input {
+          color: black;
+          border: 3px solid #4EA699;
+          padding: 12px 24px;
+          border-radius: 8px;
+          background: none;
+        }
+
+        input:focus {
+          color: white;
+          background: #4EA699;
+          border: 3px solid #4EA699
+            padding: 12px 24px;
+              border-radius: 8px;
+        }
+        }
+    </style>
+  </head>
+  <body>
+  <h1>Hi! 👋</h1>
+  <h2>Welcome to rhub.tk - the RoutineHub URL shortener</h2>
+  <h3>How do I use this black magic?</h3>
+  <p>It's simple! Just enter a RoutineHub ID down below and click "Generate"!</p>
+
+<input id="numb">
+
+<button class="button" type="button" onclick="rhID()">Generate</button>
+
+<p id="result"></p>
+
+<p id="r">Error</p>
+
+<script>
+function rhID() {
+  var input, text;
+
+  input = document.getElementById("numb").value;
+  id = Math.round(input);
+
+  if (isNaN(input) || input < 1) {
+    text = "That's not a valid RoutineHub ID!";
+  } else {
+    text = `<a class="button" href="https://rhub.tk?id=${id}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?id=${id}" rel="noopener noreferrer" target="_blank">https://rhub.tk?id=${id}</a>`;
+  }
+  document.getElementById("result").innerHTML = text;
+}
+</script>
+<script>
+    const queryString = new URLSearchParams(window.location.search);
+	const user = queryString.get('r');
+    if( r ) {
+    	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>` }
+    else {
+    	document.getElementById('r').innerHTML = `You are not being redirected` }
+</script>
+  </body>
+</html>

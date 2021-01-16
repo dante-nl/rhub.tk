@@ -16,22 +16,16 @@
     <h1 id="rhid">Error</h1>
 
     <script>
-      function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
+
         const queryString = new URLSearchParams(window.location.search);
     	const rhid = queryString.get('rhid');
         if( rhid ) {
         	document.getElementById('rhid').innerHTML = `<h1>Redirecting to RoutineHub Shortcut ${rhid}...</h1>`;
           window.location.replace(`https://routinehub.co/shortcut/${rhid}`); }
         else {
-        	document.getElementById('rhid').innerHTML = `Nothing to redirect to! You will return to the homepage`
-          sleep(5000);
-          window.location.replace(`/index`); }
+        	document.getElementById('rhid').innerHTML = `Nothing to redirect to! You will return to the homepage after a few seconds!`
+          setTimeout(() => {    window.location.replace(`/index`); }, 5000);
+      }
     </script>
   </body>
 </html>

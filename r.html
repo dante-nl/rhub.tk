@@ -20,7 +20,7 @@
         const queryString = new URLSearchParams(window.location.search);
     	const rhid = queryString.get('rhid');
         if( rhid ) {
-        	document.getElementById('rhid').innerHTML = `<h1>Redirecting to RoutineHub Shortcut ${rhid}...</h1>`;
+        	document.getElementById('rhid').innerHTML = `Redirecting to RoutineHub Shortcut ${rhid}...`;
           window.location.replace(`https://routinehub.co/shortcut/${rhid}`); }
         else {
         	document.getElementById('rhid').innerHTML = `Nothing to redirect to! You will return to the homepage after a few seconds!`

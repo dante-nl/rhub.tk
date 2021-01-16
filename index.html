@@ -30,7 +30,7 @@ function rhID() {
   if (isNaN(input) || input < 1) {
     text = "That's not a valid RoutineHub ID!";
   } else {
-    text = `<a class="button" href="https://rhub.tk?id=${id}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?id=${id}" rel="noopener noreferrer" target="_blank">https://rhub.tk?id=${id}</a>`;
+    text = `<a class="button" href="https://rhub.tk?r=${id}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?r=${id}" rel="noopener noreferrer" target="_blank">https://rhub.tk?r=${id}</a>`;
   }
   document.getElementById("result").innerHTML = text;
 }

@@ -1,67 +1,103 @@
-$transition-duration: 2s;
-$path-length: 157px; // Retrieved using SVG's getTotalLength()
-
-html, body {
-  width: 100%;
-  height: 100%;
+      @media (prefers-color-scheme: dark) {
+        body {
+          margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%) }
+        }
+      .spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #346F66;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 
-svg {
-  overflow: visible;
-  width: 100px;
-  height: 150px;
-  
-  g {
-    animation: slide $transition-duration linear infinite;
-    
-    &:nth-child(2) {
-      animation-delay: $transition-duration / 4;
-      
-      path {
-        animation-delay: $transition-duration / 4;
-        stroke-dasharray: 0px $path-length + 1;
-        stroke-dashoffset: 1px;
-      }
-    }
-  }
-  
-  path{
-    stroke: url(#gradient);
-    stroke-width: 20px;
-    stroke-linecap: round;
-    fill: none;
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
-    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
-  }
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(50px);
-  }
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
 }
 
-@keyframes escalade {
-  0% {
-    stroke-dasharray: 0 $path-length;
-    stroke-dashoffset: 0;
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
   }
-  50% {
-    stroke-dasharray: $path-length - 1 $path-length;
-    stroke-dashoffset: 0;
+}
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%) }
   }
-  100% {
-    stroke-dasharray: $path-length - 1 $path-length;
-    stroke-dashoffset: -($path-length - 1);
-  }
+.spinner {
+margin: 100px auto 0;
+width: 70px;
+text-align: center;
+}
+
+.spinner > div {
+width: 18px;
+height: 18px;
+background-color: #4EA699;
+
+border-radius: 100%;
+display: inline-block;
+-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+-webkit-animation-delay: -0.32s;
+animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+-webkit-animation-delay: -0.16s;
+animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+0%, 80%, 100% { -webkit-transform: scale(0) }
+40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+0%, 80%, 100% {
+-webkit-transform: scale(0);
+transform: scale(0);
+} 40% {
+-webkit-transform: scale(1.0);
+transform: scale(1.0);
+}
+}
 }

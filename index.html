@@ -3,107 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>rhub.tk - Short Shortcuts</title>
-    <style>
-      @media (prefers-color-scheme: dark) {
-    	body {
-			background: #141414;
-        	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        	color: white;
-            }
-
-            .button {
-                display: inline-block;
-                text-align: center;
-                vertical-align: middle;
-                padding: 12px 24px;
-                border: 3px solid #346f66;
-                border-radius: 8px;
-                background: #346f66;
-                color: #EBEBEB;
-                text-decoration: none;
-            }
-            .button:hover,
-            .button:focus {
-                border: 3px solid #3e857a;
-                background: #3e857a;
-                color: #EBEBEB;
-                text-decoration: none;
-            }
-
-
-            input {
-              color: white;
-              border: 3px solid #346f66;
-              padding: 12px 24px;
-              border-radius: 8px;
-              background: none;
-            }
-
-            input:focus {
-              color: white;
-              background: #346F66;
-              border: 3px solid #346f66
-                padding: 12px 24px;
-                  border-radius: 8px;
-            }
-
-
-
-        a {
-  			color: #346F66;
-		}
-
-    }
-
-    @media (prefers-color-scheme: light) {
-    	body {
-				background: #EBEBEB;
-        		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        		color: black
-      		}
-
-          .button {
-        display: inline-block;
-        text-align: center;
-        vertical-align: middle;
-        padding: 12px 24px;
-        border: 3px solid #4ea699;
-        border-radius: 8px;
-        background: #4ea699;
-        color: #EBEBEB;
-        text-decoration: none;
-    }
-    .button:hover,
-    .button:focus {
-        border: 3px solid #5ec7b8;
-        background: #5ec7b8;
-        color: #EBEBEB;
-        text-decoration: none;
-    }
-
-
-        a {
-  			color: #4EA699;
-		}
-
-
-        input {
-          color: black;
-          border: 3px solid #4EA699;
-          padding: 12px 24px;
-          border-radius: 8px;
-          background: none;
-        }
-
-        input:focus {
-          color: white;
-          background: #4EA699;
-          border: 3px solid #4EA699
-            padding: 12px 24px;
-              border-radius: 8px;
-        }
-        }
-    </style>
+    <link rel="stylesheet" href="https://rhub.netlify.app/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
   <h1>Hi! 👋</h1>
@@ -139,7 +40,7 @@ function rhID() {
 	const r = queryString.get('r');
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
-      window.location.replace(`http://rhub.tk/r?rhid=${r}`); }
+      window.location.replace(`/r?rhid=${r}`); }
     else {
     	document.getElementById('r').innerHTML = `You are not being redirected` }
 </script>

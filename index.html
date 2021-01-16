@@ -138,7 +138,8 @@ function rhID() {
     const queryString = new URLSearchParams(window.location.search);
 	const r = queryString.get('r');
     if( r ) {
-    	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>` }
+    	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
+      window.location.replace(`http://rhub.tk/r?rhid=${r}`); }
     else {
     	document.getElementById('r').innerHTML = `You are not being redirected` }
 </script>

@@ -136,7 +136,7 @@ function rhID() {
 </script>
 <script>
     const queryString = new URLSearchParams(window.location.search);
-	const user = queryString.get('r');
+	const r = queryString.get('r');
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>` }
     else {

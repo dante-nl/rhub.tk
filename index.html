@@ -22,10 +22,12 @@
   <p>It's simple! Just enter a RoutineHub ID down below and click "Generate"!</p>
 
 <input id="numb">
-
-<button class="button" type="button" onclick="rhID()">Generate</button>
-
+<button class="button" type="button" onclick="rhID()">Generate shorter Shortcut</button>
 <p id="result"></p>
+
+<input id="name">
+<button class="button" type="button" onclick="rhProfile()">Generate shorter profile link</button>
+<p id="userresult"></p>
 
 <p id="r">Loading data...</p>
 
@@ -44,15 +46,42 @@ function rhID() {
   document.getElementById("result").innerHTML = text;
 }
 </script>
+
+<script>
+function rhProfile() {
+  var input1, text1;
+
+  input1 = document.getElementById("name").value;
+
+  if (input1 == null || input1 == "") {
+    text1 = `That's not a valid username!` }
+  else {
+    text1 = `<a class="button" href="https://rhub.tk?u=${input1}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?u=${input1}" rel="noopener noreferrer" target="_blank">https://rhub.tk?u=${input1}</a>`;
+  }
+
+  document.getElementById("userresult").innerHTML = text1
+}
+</script>
 <script>
     const queryString = new URLSearchParams(window.location.search);
+    const u = queryString.get('u');
+    if ( u ) {
+      if( u ) {
+      	document.getElementById('u').innerHTML = `<h1>You are being redirected...</h1>`;
+        window.location.replace(`/u?name=${u}`); }
+       else {
+  	document.getElementById('r').innerHTML = `<br>`;
+  }
+}
+    else {
 	const r = queryString.get('r');
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
       window.location.replace(`/r?rhid=${r}`); }
      else {
-	document.getElementById('r').innerHTML = `<br>`;     
+	document.getElementById('r').innerHTML = `<br>`;
      }
+   }
 </script>
 </body>
 </html>

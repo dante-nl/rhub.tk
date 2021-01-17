@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirect</title>
+    <link rel="stylesheet" href="https://rhub.netlify.app/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://rhub.netlify.app/load.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/i/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/i/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/i/favicon-16x16.png">
+<link rel="manifest" href="/i/site.webmanifest">
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+    <h1 id="user">Error</h1>
+
+    <script>
+
+        const queryString = new URLSearchParams(window.location.search);
+    	const user = queryString.get('user');
+        if( user ) {
+        	document.getElementById('user').innerHTML = `Redirecting to RoutineHub user ${user}...`;
+          window.location.replace(`https://routinehub.co/user/${user}`); }
+        else {
+        	document.getElementById('user').innerHTML = `Nothing to redirect to! You will return to the homepage after a few seconds!`
+          setTimeout(() => {    window.location.replace(`/index`); }, 5000);
+      }
+    </script>
+  </body>
+</html>

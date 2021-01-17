@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/i/favicon-16x16.png">
     <link rel="manifest" href="/i/site.webmanifest">
     <meta property="og:title" content="rhub.tk" />
+    <meta name="description" content="Shorten RoutineHub Shortcut links!">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/i/rhub.png" />
   <meta property="theme-color" content="#346F66" />
@@ -48,11 +49,13 @@ function rhID() {
 	const r = queryString.get('r');
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
-	document.querySelector('meta[name="description"]').setAttribute(`Redirect to RoutineHub Shortcut with ID ${r}`, _desc);
+	$('meta[name=description]').remove();
+    	$('head').append( `<meta name="description" content="Redirect to a RoutineHub Shortcut with ID ${r}">` );
       window.location.replace(`/r?rhid=${r}`); }
     else {
     	document.getElementById('r').innerHTML = `You are not being redirected` }
-	document.querySelector('meta[name="description"]').setAttribute(`Shorten RoutineHub links!`, _desc);
+	$('meta[name=description]').remove();
+    	$('head').append( `<meta name="description" content="Shorten RoutineHub Shortcut links!">` );
 </script>
   </body>
 </html>

@@ -50,6 +50,9 @@ function rhID() {
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
       window.location.replace(`/r?rhid=${r}`); }
+     else {
+	document.getElementById('r').innerHTML = `<br>`;     
+     }
 </script>
 </body>
 </html>

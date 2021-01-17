@@ -29,7 +29,7 @@
 <button class="button" type="button" onclick="rhProfile()">Generate shorter profile link</button>
 <p id="userresult"></p>
 
-<p id="r">Loading data...</p>
+<p id="redirect">Loading data...</p>
 
 <script>
 function rhID() {
@@ -67,19 +67,20 @@ function rhProfile() {
     const u = queryString.get('u');
     if ( u ) {
       if( u ) {
-      	document.getElementById('u').innerHTML = `<h1>You are being redirected...</h1>`;
+      	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
         window.location.replace(`/u?name=${u}`); }
        else {
-  	document.getElementById('r').innerHTML = `<br>`;
+  	document.getElementById('redirect').innerHTML = `<br>`;
   }
 }
-    else {
+
+  else {
 	const r = queryString.get('r');
     if( r ) {
-    	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
+    	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
       window.location.replace(`/r?rhid=${r}`); }
      else {
-	document.getElementById('r').innerHTML = `<br>`;
+	document.getElementById('redirect').innerHTML = `<br>`;
      }
    }
 </script>

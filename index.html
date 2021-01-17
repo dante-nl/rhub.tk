@@ -12,7 +12,6 @@
     <meta property="og:title" content="rhub.tk" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/i/rhub.png" />
-    <meta property="og:description" content=`${sharetext}` />
   <meta property="theme-color" content="#346F66" />
   </head>
   <body>
@@ -49,11 +48,11 @@ function rhID() {
 	const r = queryString.get('r');
     if( r ) {
     	document.getElementById('r').innerHTML = `<h1>You are being redirected...</h1>`;
-	sharetext = `Redirect to RoutineHub Shortcut with ID ${r}`
+	document.querySelector('meta[name="description"]').setAttribute(`Redirect to RoutineHub Shortcut with ID ${r}`, _desc);
       window.location.replace(`/r?rhid=${r}`); }
     else {
     	document.getElementById('r').innerHTML = `You are not being redirected` }
-	sharetext = `Shorten RoutineHub links!`
+	document.querySelector('meta[name="description"]').setAttribute(`Shorten RoutineHub links!`, _desc);
 </script>
   </body>
 </html>

@@ -20,9 +20,9 @@
     const title = queryString.get('title');
     if ( title ) {
       document.getElementById('title').innerHTML = `${title}`;
-      document.getElementById('actions').innerHTML = `<a class="button" href="javascript:close();">Close this tab</a> or <a class="button" href="/index">Return to the homepage</a>`
+      document.getElementById('actions').innerHTML = `<a class="button" href="/index">Return to the homepage</a>`
     } else {
-      document.getElementById('title').innerHTML = `No error values have been passed, <a class="button" href="javascript:close();">Close this tab</a> or <a class="button" href="/index">Return to the homepage</a>`;
+      document.getElementById('title').innerHTML = `No error values have been passed, <a class="button" href="/index">Return to the homepage</a>`;
       document.getElementById('actions').innerHTML = `<br>`
     }
 

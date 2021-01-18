@@ -11,16 +11,26 @@
     <link rel="manifest" href="/i/site.webmanifest">
   </head>
   <body>
-
+<p id="actions">Actions should appear here</p>
     <h1 id="title">Error</h1>
+    <h2 id="desc">This should not happen, please click <a href="mailto:dante_nl@icloud.com">here</a> to send a e-mail to me</h2>
 
     <script>
     const queryString = new URLSearchParams(window.location.search);
     const title = queryString.get('title');
     if ( title ) {
       document.getElementById('title').innerHTML = `${title}`;
+      document.getElementById('actions').innerHTML = `<a class="button" href="javascript:close();">Close this tab</a> or <a class="button" href="/index">Return to the homepage</a>`
     } else {
       document.getElementById('title').innerHTML = `No error values have been passed, <a class="button" href="javascript:close();">Close this tab</a> or <a class="button" href="/index">Return to the homepage</a>`;
+      document.getElementById('actions').innerHTML = `<br>`
+    }
+
+    const desc = queryString.get('desc');
+    if ( desc ) {
+      document.getElementById('desc').innerHTML = `${desc}`;
+    } else {
+      document.getElementById('desc').innerHTML = `<br>`;
     }
     </script>
   </body>

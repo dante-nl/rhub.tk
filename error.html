@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Error - rhub.tk</title>
+    <link rel="stylesheet" href="https://rhub.netlify.app/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/i/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/i/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/i/favicon-16x16.png">
+    <link rel="manifest" href="/i/site.webmanifest">
+  </head>
+  <body>
+
+    <h1 id="title">Error</h1>
+
+    <script>
+    const queryString = new URLSearchParams(window.location.search);
+    const title = queryString.get('title');
+    if ( title ) {
+      document.getElementById('title').innerHTML = `${title}`;
+    } else {
+      document.getElementById('title').innerHTML = `No error values have been passed, <a class="button" href="javascript:close()">Close this tab</a> or <a class="button" href="/index">Return to the homepage</a>`;
+    }
+    </script>
+  </body>
+</html>

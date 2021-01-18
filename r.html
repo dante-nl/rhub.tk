@@ -31,7 +31,7 @@
         if( rhid ) {
             if (isNaN(rhid) || rhid < 1) {
               document.getElementById('rhid').innerHTML = `Not a valid RH ID!`;
-              window.location.replace(`file:///C:/Users/dante/iCloudDrive/rhub.tk/error.html?title=Not%20a%20valid%20RoutineHub%20ID!&desc=rhub.tk%20was%20trying%20to%20send%20you%20to%20a%20invalid%20RoutineHub%20ID!%20(${rhid})`);
+              window.location.replace(`/error?title=Not%20a%20valid%20RoutineHub%20ID!&desc=rhub.tk%20was%20trying%20to%20send%20you%20to%20a%20invalid%20RoutineHub%20ID!%20(${rhid})`);
             } else {
         	document.getElementById('rhid').innerHTML = `Redirecting to RoutineHub Shortcut ${rhid}...`;
           window.location.replace(`https://routinehub.co/shortcut/${rhid}`); }

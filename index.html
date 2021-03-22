@@ -14,6 +14,28 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/i/rhub-tk.png" />
   <meta property="theme-color" content="#346F66" />
+	  <script>
+    const queryString = new URLSearchParams(window.location.search);
+    const u = queryString.get('u');
+    if ( u ) {
+      if( u ) {
+      	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
+        window.location.replace(`/u?user=${u}`); }
+       else {
+  	document.getElementById('redirect').innerHTML = `<br>`;
+  }
+}
+
+  else {
+	const r = queryString.get('r');
+    if( r ) {
+    	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
+      window.location.replace(`/r?rhid=${r}`); }
+     else {
+	document.getElementById('redirect').innerHTML = `<br>`;
+     }
+   }
+</script>
   </head>
   <body>
   <h1>Hi! 👋</h1>
@@ -62,27 +84,6 @@ function rhProfile() {
   document.getElementById("userresult").innerHTML = text1
 }
 </script>
-<script>
-    const queryString = new URLSearchParams(window.location.search);
-    const u = queryString.get('u');
-    if ( u ) {
-      if( u ) {
-      	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
-        window.location.replace(`/u?user=${u}`); }
-       else {
-  	document.getElementById('redirect').innerHTML = `<br>`;
-  }
-}
 
-  else {
-	const r = queryString.get('r');
-    if( r ) {
-    	document.getElementById('redirect').innerHTML = `<h1>You are being redirected...</h1>`;
-      window.location.replace(`/r?rhid=${r}`); }
-     else {
-	document.getElementById('redirect').innerHTML = `<br>`;
-     }
-   }
-</script>
 </body>
 </html>

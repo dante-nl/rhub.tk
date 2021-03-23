@@ -24,6 +24,13 @@
                 text-decoration: none;
             }
 
+	    .box {
+		                  color: white;
+              border: 3px solid #346f66;
+              padding: 12px 24px;
+              border-radius: 8px;
+              background: none;
+	      }
 
             input {
               color: white;
@@ -96,4 +103,11 @@
             padding: 12px 24px;
               border-radius: 8px;
         }
+	    .box {
+		    color: black;
+          border: 3px solid #4EA699;
+          padding: 12px 24px;
+          border-radius: 8px;
+          background: none;
+	    }
         }

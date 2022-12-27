@@ -41,7 +41,7 @@ function rhID() {
   if (isNaN(input) || input < 1) {
     text = "That's not a valid RoutineHub ID!";
   } else {
-    text = `<a class="button" href="https://rhub.xyz?r=${id}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.xyz?r=${id}" rel="noopener noreferrer" target="_blank">https://rhub.xyz?r=${id}</a>`;
+    text = `<a class="button" href="https://rhub.tk?r=${id}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?r=${id}" rel="noopener noreferrer" target="_blank">https://rhub.tk?r=${id}</a>`;
   }
   document.getElementById("result").innerHTML = text;
 }
@@ -56,7 +56,7 @@ function rhProfile() {
   if (input1 == null || input1 == "") {
     text1 = `That's not a valid username!` }
   else {
-    text1 = `<a class="button" href="https://rhub.xyz?u=${input1}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.xyz?u=${input1}" rel="noopener noreferrer" target="_blank">https://rhub.xyz?u=${input1}</a>`;
+    text1 = `<a class="button" href="https://rhub.tk?u=${input1}" rel="noopener noreferrer" target="_blank">Open shortened URL</a> <strong>Raw URL:</strong> <a href="https://rhub.tk?u=${input1}" rel="noopener noreferrer" target="_blank">https://rhub.tk?u=${input1}</a>`;
   }
 
   document.getElementById("userresult").innerHTML = text1
